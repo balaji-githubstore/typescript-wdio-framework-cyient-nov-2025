@@ -1,14 +1,16 @@
+import { TestData } from "../../src/constants/TestConstant";
+import HomePage from "../../src/pages/HomePage";
+
 describe('home_suite',()=>{
 
     it('should view sign in screen',async ():Promise<void> =>{
-
-        console.log("Sign in screen");
-        console.log(await driver.getPageSource());
+        expect(await HomePage.isSignInDisplayed()).toBe(true)
     })
 
-    it('should view explore screen',async ():Promise<void> =>{
+    it('should view ready to learning text',async ():Promise<void> =>{
+        //assertion should be present under test
+        expect(await HomePage.getReadyToStartlearningText()).toContain(TestData.readyToLearnExpectedValue)
+        // TestData.users.invalidUser.username
 
-        console.log("Sign in screen");
-        console.log(await driver.getPageSource());
     })
 })
