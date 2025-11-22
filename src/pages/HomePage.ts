@@ -36,7 +36,8 @@ class HomePage extends BasePage
     //*[contains(@text,'Ready to start')]
     async getReadyToStartlearningText():Promise<string>
     {
-        return await this.readyToStartLearningElement.getAttribute("text")
+        // return await this.readyToStartLearningElement.getAttribute("text")
+        return await this.getAttribute(await this.readyToStartLearningElement,"text")
     }
 
 

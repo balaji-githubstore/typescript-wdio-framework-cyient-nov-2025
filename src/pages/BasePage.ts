@@ -1,28 +1,31 @@
+import { GestureHelper } from "../utils/GestureUtils";
+import { WaitHelper } from "../utils/WaitHelpers";
+
 export abstract class BasePage {
-//   protected waitHelper = WaitHelper;
-//   protected gestureHelper = GestureHelper;
+  protected waitHelper = WaitHelper;
+  protected gestureHelper = GestureHelper;
 
   async waitForPageLoad(): Promise<void> {
     await browser.pause(1000);
   }
 
-//   async getText(element: WebdriverIO.Element): Promise<string> {
-//     await this.waitHelper.waitForElement(element);
-//     return await element.getText();
-//   }
+  async getText(element: WebdriverIO.Element): Promise<string> {
+    await this.waitHelper.waitForElement(element);
+    return await element.getText();
+  }
 
-//   async getAttribute(element: WebdriverIO.Element,attribute: string): Promise<string> {
-//     await this.waitHelper.waitForElement(element);
-//     return await element.getAttribute(attribute)
-//   }
+  protected async getAttribute(element: WebdriverIO.Element,attribute: string): Promise<string> {
+    await this.waitHelper.waitForElement(element);
+    return await element.getAttribute(attribute)
+  }
 
-//   async click(element: WebdriverIO.Element): Promise<void> {
-//     await this.waitHelper.waitAndClick(element);
-//   }
+  async click(element: WebdriverIO.Element): Promise<void> {
+    await this.waitHelper.waitAndClick(element);
+  }
 
-//   async sendKeys(element: WebdriverIO.Element, text: string): Promise<void> {
-//     await this.waitHelper.waitAndSendKeys(element, text);
-//   }
+  async sendKeys(element: WebdriverIO.Element, text: string): Promise<void> {
+    await this.waitHelper.waitAndSendKeys(element, text);
+  }
 
   async isDisplayed(element: WebdriverIO.Element): Promise<boolean> {
     try {
