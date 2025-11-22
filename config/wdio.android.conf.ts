@@ -14,6 +14,6 @@ export const config: WebdriverIO.Config = {
     // 'appium:appActivity': '.MainActivity',
     'appium:autoGrantPermissions': true,
     'appium:noReset': false,
-    'appium:newCommandTimeout': 240
+    'appium:newCommandTimeout': 250
   }]
 };
