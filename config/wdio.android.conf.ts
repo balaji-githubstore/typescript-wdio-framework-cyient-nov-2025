@@ -9,9 +9,9 @@ export const config: WebdriverIO.Config = {
     'appium:deviceName': 'Android Emulator',
     // 'appium:platformVersion': '13.0',
     'appium:automationName': 'UiAutomator2',
-    'appium:app': path.join(__dirname, '..', 'apps', 'android', 'Khan Academy.apk'),
-    // 'appium:appPackage': 'com.example.app',
-    // 'appium:appActivity': '.MainActivity',
+    // 'appium:app': path.join(__dirname, '..', 'apps', 'android', 'khan-academy-7-3-2.apk'),
+    'appium:appPackage': 'org.khanacademy.android',
+    'appium:appActivity': 'org.khanacademy.android.ui.library.MainActivity',
     'appium:autoGrantPermissions': true,
     'appium:noReset': false,
     'appium:newCommandTimeout': 250
